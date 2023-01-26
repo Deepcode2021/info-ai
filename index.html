@@ -1,3 +1,46 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+#main-container {
+  background-color: #00b8d4;
+  color: #b3e5fc;
+}
+
+#text-input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+#submit-button {
+  width: 10%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #45a049;
+}
+
+#output {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border
+
+</style>
+<body>
 <div id="main-container" style="text-align: center;">
   <h1>Text Information</h1>
   <textarea id="text-input"></textarea>
@@ -6,3 +49,21 @@
   <br><br>
   <div id="output"></div>
 </div>
+</body>
+<script>
+let textInput = document.getElementById("text-input");
+let submitButton = document.getElementById("submit-button");
+let output = document.getElementById("output");
+
+submitButton.addEventListener("click", function() {
+  let text = textInput.value;
+  let wordCount = text.split(" ").length;
+  let charCount = text.length;
+  let avgWordLength = charCount / wordCount;
+
+  output.innerHTML = "Word Count: " + wordCount + "<br>" +
+                    "Character Count: " + charCount + "<br>" +
+                    "Average Word Length: " + avgWordLength.toFixed(2);
+});
+</script>
+</html>
